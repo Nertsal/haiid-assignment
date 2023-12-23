@@ -1,0 +1,67 @@
+version: "3.1"
+
+stories:
+
+- story: introduction
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: affirm
+  - action: utter_start
+  - intent: ready
+  - checkpoint: check_start
+
+- story: word_white
+  steps:
+  - checkpoint: check_start
+  - action: utter_question_1
+  - intent: affirm
+  - action: utter_question_2
+  - intent: bright
+  - action: utter_guess_white
+  - checkpoint: check_guessed
+
+- story: word_black
+  steps:
+  - checkpoint: check_start
+  - action: utter_question_1
+  - intent: affirm
+  - action: utter_question_2
+  - intent: dark
+  - action: utter_guess_black
+  - checkpoint: check_guessed
+
+- story: word_banana
+  steps:
+  - checkpoint: check_start
+  - action: utter_question_1
+  - intent: deny
+  - action: utter_question_2
+  - intent: bright
+  - action: utter_guess_banana
+  - checkpoint: check_guessed
+
+- story: word_aubergine
+  steps:
+  - checkpoint: check_start
+  - action: utter_question_1
+  - intent: deny
+  - action: utter_question_2
+  - intent: dark
+  - action: utter_guess_aubergine
+  - checkpoint: check_guessed
+
+- story: after_guess_correct
+  steps:
+  - checkpoint: check_guessed
+  - action: utter_is_correct
+  - intent: affirm
+  - action: utter_guessed_correct
+  - action: utter_end
+
+- story: after_guess_wrong
+  steps:
+  - checkpoint: check_guessed
+  - intent: deny
+  - action: utter_guessed_wrong
+  - action: utter_end

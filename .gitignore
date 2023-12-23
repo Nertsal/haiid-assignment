@@ -1,2 +1,4 @@
 /.direnv
 /venv
+.rasa
+__pycache__

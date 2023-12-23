@@ -1,0 +1,63 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - bot_challenge
+  - start_game
+  - ready
+  - bright
+  - dark
+  - uncertain
+
+responses:
+  utter_greet:
+  - text: "Hey! I am a bot that can play a simple word game with you. Would you like to try?"
+
+  utter_start:
+  - text: "Great! Here are 4 words we will be playing with:\n - white\n - black\n - banana\n - aubergine\nPlease remember one of these words but don't tell me! I will try to guess your word. Let me know when you are ready."
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_question_1:
+  - text: "Is your word a color?"
+
+  utter_question_2:
+  - text: "Is your word bright or dark?"
+
+  utter_question_3:
+  - text: "Is your word a furniture?"
+
+  utter_guess_white:
+  - text: "I think your word is 'white'"
+
+  utter_guess_black:
+  - text: "I think your word is 'black'"
+
+  utter_guess_banana:
+  - text: "I think your word is 'banana'"
+
+  utter_guess_aubergine:
+  - text: "I think your word is 'aubergine'"
+
+  utter_is_correct:
+  - text: "Is that correct?"
+
+  utter_guessed_correct:
+  - text: "Nice!"
+
+  utter_guessed_wrong:
+  - text: "Oh, that's unfortunate"
+
+  utter_end:
+  - text: "Ok, it's been nice playing, bye!"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

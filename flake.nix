@@ -15,7 +15,7 @@
         };
         libDeps = with pkgs; [
             # zlib
-            # stdenv.cc.cc.lib
+            stdenv.cc.cc.lib
         ];
         libPath = pkgs.lib.makeLibraryPath libDeps;
       in with pkgs;
